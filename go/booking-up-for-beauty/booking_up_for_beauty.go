@@ -5,9 +5,12 @@ import (
 	"time"
 )
 
+// link : https://yourbasic.org/golang/format-parse-string-time-date-example/
+// Y m d H:I:S  ==> 2006 2 1 15:04:05 --> to UTC
+
 // Schedule returns a time.Time from a string containing a date
 func Schedule(date string) time.Time {
-	layout := "1/2/2006 15:04:05"	
+	layout := "1/2/2006 15:04:05"	 // day/month/year h:i:s
 	t, _ := time.Parse(layout	, date)
 	fmt.Printf("Parse %s --> %s \n", date, t)
 
