@@ -64,5 +64,16 @@ func Description(date string) string {
 
 // AnniversaryDate returns a Time with this year's anniversary
 func AnniversaryDate() time.Time {
-	panic("Please implement the AnniversaryDate function")
+	// Output: 2020-09-15 00:00:00 +0000 UTC
+
+	layout := "2006/02/1"
+	stringAnniv := "2012/15/09"
+	timeAnniv, _ := time.Parse(layout, stringAnniv)
+
+	stringThisYearAnniv := fmt.Sprintf("%v/%v/%v", time.Now().Year(), timeAnniv.Day(), int(timeAnniv.Month()))
+	thisYearAnniv, _ := time.Parse(layout, stringThisYearAnniv)
+	fmt.Printf("string anniv : %s | timeAnniv: %s | stringThisYearAnniv: %s | thisYearAnniv: %s \n", stringAnniv, timeAnniv, stringThisYearAnniv, thisYearAnniv)
+
+	return thisYearAnniv
+
 }
