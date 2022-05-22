@@ -43,7 +43,23 @@ func IsAfternoonAppointment(date string) bool {
 
 // Description returns a formatted string of the appointment time
 func Description(date string) string {
-	panic("Please implement the Description function")
+	// Output: "You have an appointment on Thursday, July 25, 2019, at 13:45."
+	fmt.Printf("input date: %s | ", date)
+	layout := "1/2/2006 15:04:05"
+	parseDate, _ := time.Parse(layout, date)
+	fmt.Printf("parseDate: %s | ", parseDate)
+
+	formatDate := "Monday, January 2, 2006"
+	descDate := parseDate.Format(formatDate)
+	fmt.Printf("descDate: %s | ", descDate)
+
+	descTime := fmt.Sprintf("%v:%v.", parseDate.Hour(), parseDate.Minute())
+	fmt.Printf("descTime: %s | \n", descTime)
+
+	desc := fmt.Sprintf("You have an appointment on %s, at %s", descDate, descTime)
+
+	return desc
+	
 }
 
 // AnniversaryDate returns a Time with this year's anniversary
