@@ -44,6 +44,8 @@ func IsAfternoonAppointment(date string) bool {
 // Description returns a formatted string of the appointment time
 func Description(date string) string {
 	// Output: "You have an appointment on Thursday, July 25, 2019, at 13:45."
+	
+
 	fmt.Printf("input date: %s | ", date)
 	layout := "1/2/2006 15:04:05"
 	parseDate, _ := time.Parse(layout, date)
@@ -66,14 +68,16 @@ func Description(date string) string {
 func AnniversaryDate() time.Time {
 	// Output: 2020-09-15 00:00:00 +0000 UTC
 
-	layout := "2006/02/1"
-	stringAnniv := "2012/15/09"
-	timeAnniv, _ := time.Parse(layout, stringAnniv)
+	// layout := "2006/02/1"
+	// stringAnniv := "2012/15/09"
+	// timeAnniv, _ := time.Parse(layout, stringAnniv)
 
-	stringThisYearAnniv := fmt.Sprintf("%v/%v/%v", time.Now().Year(), timeAnniv.Day(), int(timeAnniv.Month()))
-	thisYearAnniv, _ := time.Parse(layout, stringThisYearAnniv)
-	fmt.Printf("string anniv : %s | timeAnniv: %s | stringThisYearAnniv: %s | thisYearAnniv: %s \n", stringAnniv, timeAnniv, stringThisYearAnniv, thisYearAnniv)
+	// stringThisYearAnniv := fmt.Sprintf("%v/%v/%v", time.Now().Year(), timeAnniv.Day(), int(timeAnniv.Month()))
+	// thisYearAnniv, _ := time.Parse(layout, stringThisYearAnniv)
+	// fmt.Printf("string anniv : %s | timeAnniv: %s | stringThisYearAnniv: %s | thisYearAnniv: %s \n", stringAnniv, timeAnniv, stringThisYearAnniv, thisYearAnniv)
 
-	return thisYearAnniv
+	// return thisYearAnniv
+
+	return time.Date(time.Now().Year(), time.September, 15, 0, 0, 0, 0, time.UTC)
 
 }
